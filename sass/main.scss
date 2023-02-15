@@ -1,0 +1,29 @@
+/* 
+Color: #8e9efc #5a73fc #1c3eff
+ */
+//  "sasstocss": "node-sass sass/main.scss css/style.css -w"
+ // sasstocss: câu lệnh compile từ sass sang css
+    // node-sass: lệnh compile
+    // sass/main.scss: file compile
+    // css/style.css: file cập nhật
+    // -w: viết tắt là watch để cho nó tự compile sang css
+
+ @import './Abstracts/variable';
+ @import './Base/animations';
+ @import './Base/base';
+ @import './Base/typography';
+ @import './Components/buttons';
+ @import './Layout/header'; 
+ @import './Layout/grid';
+ @import './Pages/home';
+@import './Base/utilities';
+@import './Components/composition';
+@import './Components/skill-box';
+@import './Components/card';
+@import './Components/testimonials';
+@import './Components/bg-video';
+@import './Components/enroll';
+@import './Components/form';
+@import './Components/footer';
+@import './Components/popup';
+@import './Components/navigation';

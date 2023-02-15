@@ -1,0 +1,67 @@
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+ 
+    80% {
+        transform: translateX(10px)
+    }
+ 
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+ }
+ @keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+ 
+    80% {
+        transform: translateX(-10px)
+    }
+ 
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+ }
+ 
+ @keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+ 
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+ }
+ 
+ /* Animation: hiệu ứng khi mở trang */
+ /* Phần trăm là từng khảng thời gian
+ - animationtest là tên 
+ - Giai đoạn 1: 0% (khi mới bắt đầu hiệu ứng) opacity = 0, 
+   element ở vị trí trên so với vị trí gốc 100px.
+ - Giai đoạn 2: 80% (thời gian của hiệu ứng đã qua 80%, 
+ nếu thòi gian hiệu ứng là 10s thì mốc 2 này là sau 8s) , 
+ element ở vị trí so với vị trí gốc là 20px*/
+ 
+ /* @keyframes animationtest {
+    0%{
+        opacity: 0;
+        transform: translate(0, -100px);
+    }
+ 
+    80%{
+        transform: translate(0, -20px);
+    }
+ 
+    100%{
+        opacity: 1;
+        transform: translate(0,0)
+    }
+ } */

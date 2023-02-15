@@ -1,0 +1,18 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    box-sizing: inherit;
+}
+
+/* Chuyển px sang rem 
+   16px*62.5% = 10px    
+*/
+html{
+    /* font-size: 10px; */
+    font-size: 62.5%;
+}
+
+body{
+    box-sizing: border-box;
+}

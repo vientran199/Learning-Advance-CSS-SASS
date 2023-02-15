@@ -1,0 +1,90 @@
+.btn{
+    &:link,
+    &:visited{
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 40px;
+        border-radius: 100px;
+        display: inline-block;
+        font-size: 1.6rem;
+        position: relative;
+    }
+    &--white{
+        background-color: $color-white;
+        color: $color-grey;
+
+        &::after{
+            background-color: $color-white;
+        }
+         
+    }
+
+    &--blue{
+        background-color: $color-primary;
+        color: $color-white;
+        &::after{
+            background-color: $color-primary;
+        }
+    }
+    /* hieu ung khi de chuot vao */
+
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 5px 20px rgba($color-black,.2); 
+
+        &::after{
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+         
+    }
+    /* hieu ung khi click giu chuot */
+
+    &:active{
+        outline: none; /*mat vien xanh xung quanh btn khi click*/
+        transform: translateY(-1px);
+        box-shadow: 0 5px 20px rgba($color-black,.2);
+    }
+
+    &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 100px;
+        z-index: -1; 
+        transition: all .4s;
+    }
+
+    &--animated{
+        animation: moveInBottom 0.5s ease-out 0.75s ;
+        animation-fill-mode: backwards; /*backwards: có tác dụng là giữ kg hiển thị khi đang trong thời gian delay của animation*/
+        
+    }
+}
+
+.btn-text{
+    &:link,
+    &:visited{
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: .3rem;
+        font-size: $default-font-size;
+    }
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-0.2rem);
+    }
+    &:active{
+        box-shadow: 0 .5rem 1rem rgba($color-black, 0.15);
+        transform: translateY(0);
+    }
+    transition: all 0.2s;
+}

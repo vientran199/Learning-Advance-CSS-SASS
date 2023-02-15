@@ -1,0 +1,76 @@
+.popup{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, $alpha: .8);
+    z-index: 99;
+
+    //dsds
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+
+    &__img{
+        width: 100%;
+        display: block;
+    }
+    &__content{
+        @include absCenter;
+        width: 75%;
+        background-color: $color-white;
+        border-radius: 3rem;
+        overflow: hidden;
+
+        //dsds
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+
+    }
+
+    //Nó sẽ khiến chúng ta khó căn chỉnh vị trí cho phần text,
+    // nên ở phần này mình sẽ giới thiệu cho các bạn 1 mẹo để căn chỉnh đó là sử dụng display: table-cell, nó sẽ giúp element hiển thị như 1 cột trong table 
+    //(các cột sẽ hiển thị trên cùng 1 hàng, và có cùng chiều cao)  
+    &__left{
+        width: 33.3333%;
+        display: table-cell;
+    }
+    &__right{
+        width: 66.6667%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+    }
+
+    &__text{
+        font-size: 1.8rem;
+        margin-bottom: 4rem;
+        column-count: 2;       // So cot duoc chia ra
+        column-gap: 4rem;       //Khoang cach giua cac cot
+        column-rule: 1px solid $color-grey; // vach ngang giua cac cot
+        hyphens: auto;  // tu dong co gach noi chu~ khi xuong dong giua chung
+    }
+
+    &__close{
+        &:link,
+        &:visited{
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+        }
+    }
+    &:target{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content{
+        opacity: 1;
+        transform: translate(-50%,-50%) scale(1);
+        transition: all .4s  .2s;
+    }
+}

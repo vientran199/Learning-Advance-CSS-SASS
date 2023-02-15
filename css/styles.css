@@ -1,0 +1,213 @@
+/* 
+Color: #8e9efc #5a73fc #1c3eff
+ */
+
+ *, *::before, *::after{
+     margin: 0;
+     padding: 0;
+     /* box-sizing: border-box; */
+     box-sizing: inherit;
+ }
+
+ body{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #777777;
+    padding: 30px;
+    box-sizing: border-box;
+ }
+
+ header{
+    background-image: linear-gradient(to right bottom, rgba(142,158,252,.8), rgba(28,62,255,.8)),
+    url(../img/background1.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    height: 95vh;
+    clip-path: ellipse(72% 65% at 51% 18%);
+ }
+
+ .header__text-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+ }
+ .header__logo{
+     height: 70px;
+ }
+ .header__logo-box{
+    position: absolute;
+    top: 4%;
+    left: 1%;
+ }
+
+ .heading-primary{
+     color: white;
+     text-transform: uppercase;
+     margin-bottom: 60px;
+
+     /* Animation */
+    animation-name: animationtest; /*gán tên Animation*/
+    animation-duration: 2s; /*thời gian animation chạy*/
+    animation-iteration-count: 1; /*Số lần lặp, điền số vào, infinite là lặp vô hạn*/
+    animation-delay: 1s;
+    /* animation-timing-function: ; này là chia thời gian nhỏ ra để animation mượt hơn*/
+ }
+
+ .heading-primary--main{
+     display: block;
+     font-size: 6.2rem;
+     font-weight: 400;
+     letter-spacing: 15px;
+
+    
+     animation: moveInLeft 1s ease-out ;
+ }
+
+ .heading-primary--sub{
+     display: block;
+     font-size: 2.7rem;
+     font-weight: 200;
+     letter-spacing: 10px;
+     /* text-align: center; */
+     animation: moveInRight 1s ease-out;
+ }
+
+ .btn,
+ .btn:link,
+ .btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 100px;
+    display: inline-block;
+    font-size: 1.6rem;
+    position: relative;
+ }
+
+ .btn--white{
+    background-color: white;
+    color: #777777;
+ }
+/* hieu ung khi de chuot vao */
+ .btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0,0,0,.2); 
+ }
+
+/* hieu ung khi click giu chuot */
+
+.btn:active{
+    outline: none; /*mat vien xanh xung quanh btn khi click*/
+    transform: translateY(-1px);
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100px;
+    z-index: -1; 
+    transition: all .4s;
+}
+.btn--white::after{
+    background-color: white;
+ }
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+ }
+
+
+.btn--animated{
+    animation: moveInBottom 0.5s ease-out 0.75s ;
+    animation-fill-mode: backwards; /*backwards: có tác dụng là giữ kg hiển thị khi đang trong thời gian delay của animation*/
+    
+}
+
+ @keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+ /* Animation: hiệu ứng khi mở trang */
+ /* Phần trăm là từng khảng thời gian
+ - animationtest là tên 
+ - Giai đoạn 1: 0% (khi mới bắt đầu hiệu ứng) opacity = 0, 
+   element ở vị trí trên so với vị trí gốc 100px.
+ - Giai đoạn 2: 80% (thời gian của hiệu ứng đã qua 80%, 
+ nếu thòi gian hiệu ứng là 10s thì mốc 2 này là sau 8s) , 
+element ở vị trí so với vị trí gốc là 20px*/
+
+ /* @keyframes animationtest {
+    0%{
+        opacity: 0;
+        transform: translate(0, -100px);
+    }
+
+    80%{
+        transform: translate(0, -20px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0,0)
+    }
+} */
+
+/* Chuyển px sang rem 
+    16px*62.5% = 10px    
+*/
+html{
+    /* font-size: 10px; */
+    font-size: 62.5%;
+}
+

@@ -1,0 +1,74 @@
+// BỎ NHỮNG THỨ LIÊN QUAN ĐẾN TEXT
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $color-grey;
+    padding: 30px;
+    
+ }
+
+ .heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+
+    /* Animation */
+   animation-name: animationtest; /*gán tên Animation*/
+   animation-duration: 2s; /*thời gian animation chạy*/
+   animation-iteration-count: 1; /*Số lần lặp, điền số vào, infinite là lặp vô hạn*/
+   animation-delay: 1s;
+   /* animation-timing-function: ; này là chia thời gian nhỏ ra để animation mượt hơn*/
+
+   &--main{
+    display: block;
+    font-size: 6.2rem;
+    font-weight: 400;
+    letter-spacing: 15px;  
+    animation: moveInLeft 1s ease-out ;
+    }
+
+    &--sub{
+        display: block;
+        font-size: 2.7rem;
+        font-weight: 200;
+        letter-spacing: 10px;
+        /* text-align: center; */
+        animation: moveInRight 1s ease-out;
+    }   
+}
+
+.heading-secondary{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: .5rem;
+    cursor: pointer;
+    background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark);
+    color: transparent; // để color trùng với màu background
+    -webkit-background-clip: text; // Để cắt background theo text , Bắt buộc phải có prefix bởi background-clip không được support chính thức bởi chrome, safari, firefox nên phải dùng thêm prefix
+
+    transition: all .2s;
+
+    &:hover{
+        transform: skewY(7deg) scale(1.1); //skewY: nghiên theo Y , 5 độ, 
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    }
+}
+
+
+.heading-tertiary{
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph{
+    font-size: 1.6rem;
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+}
